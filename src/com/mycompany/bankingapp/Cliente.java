@@ -55,6 +55,7 @@ public class Cliente {
                 System.out.println("Já existe conta com esse NIF");
             }
         }
+        
     } 
     class ValidNif {
     public static boolean isValid(final String number){
