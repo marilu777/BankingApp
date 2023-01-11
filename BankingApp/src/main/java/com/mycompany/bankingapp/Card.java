@@ -8,6 +8,12 @@ package com.mycompany.bankingapp;
  *
  * @author Maria
  */
-public class Card {
+public abstrac class Card {
     
+    
+    public Conta conta;
+    
+    
+    
+
 }
