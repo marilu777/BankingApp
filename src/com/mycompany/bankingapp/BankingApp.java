@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.bankingapp;
 
-/**
- *
- * @author Maria
- */
 public class BankingApp {
 
     public static void main(String[] args) {
