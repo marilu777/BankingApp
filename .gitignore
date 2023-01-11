@@ -1,1 +1,8 @@
-/BankingApp/target/
+# Ficheiros que GIT não deve gerir (nem copiar para github.com)
+build.xml
+manifest.mf
+
+# Diretórios que GIT não deve gerir (nem copiar para github.com)
+/nbproject/
+/dist/
+/build/
