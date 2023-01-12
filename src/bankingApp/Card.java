@@ -2,12 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.bankingapp;
+package bankingApp;
 
 /**
  *
  * @author Maria
  */
-public class Credito {
+public class Card {
     
+    
+    public Conta conta;
+    
+    
+    
+
 }
