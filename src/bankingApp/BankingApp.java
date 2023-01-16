@@ -7,7 +7,7 @@ public class BankingApp {
 
     // Método de arranque da app
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("Bem vindo ao BNP Paribas");
 
         List<Cliente> clientes = new ArrayList<>();
 

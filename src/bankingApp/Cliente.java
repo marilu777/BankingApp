@@ -12,7 +12,12 @@ import java.util.List;
  *
  * @author Maria
  */
-public class Cliente {
+public class Cliente extends Object {
+    /**
+     *
+     * @param string
+     * @return
+     */
 
     private String nomeCompleto;
     private String nomeSegTitutar;
@@ -41,15 +46,17 @@ public class Cliente {
         //this.nomeSegTitutar = nomeSegTitutar;
         this.profissao = profissao;
         this.email = email;
-
+        //this.dinheiro = dinheiro;
         // agora queremos validar o formato do NIF
-        boolean validNif = Cliente.validarNIF(""+NIF);
+        boolean validNif = Cliente.validarNIF("" + NIF);
         if (validNif) {
             this.NIF = NIF;
         }
-        this.telefone = telefone;
-        //this.dinheiro = dinheiro;
-        boolean validPin = Cliente.validarPin(""+pin);
+        boolean validTelefone = Cliente.validarTelefone("" + telefone);
+        if (validTelefone) {
+            this.telefone = telefone;
+        }
+        boolean validPin = Cliente.validarPin("" + pin);
         if (validPin) {
             this.pin = pin;
         }
@@ -87,8 +94,7 @@ public class Cliente {
         this.telefone = telefone;
     }
      */
-    
-    /* TODO
+ /* TODO
     public void criarConta(List<Client> a) {
         for (int i = 0; i < a.size(); i++) {
             if (a.get(i).getNIF() == NIF) {
@@ -97,14 +103,23 @@ public class Cliente {
         }
 
     }
-    */
-
+     */
     //class ValidNif {
     public static boolean validarNIF(final String NIF) {
         if (NIF.length() == 9) {
             return true;
         } else {
             System.out.println("O NIF deve ter 9 digitos");
+            return false;
+        }
+    }
+
+    // class validarTelefone
+    public static boolean validarTelefone(final String telefone) {
+        if (telefone.length() == 9) {
+            return true;
+        } else {
+            System.out.println("O numero de telefone deve ter 9 digitos");
             return false;
         }
     }
@@ -168,11 +183,48 @@ public class Cliente {
         this.telefone = telefone;
     }
 
-    @Override
-    public String toString() {
-        return "Cliente{" + "nomeCompleto=" + nomeCompleto + ", NIF=" + NIF + '}';
+    public int getNIF() {
+        return NIF;
+    }
+
+    public void setNIF(int NIF) {
+        this.NIF = NIF;
+    }
+
+    public int getPin() {
+        return pin;
+    }
+
+    public void setPin(int pin) {
+        this.pin = pin;
+    }
+
+    public List<Conta> getContas() {
+        return contas;
+    }
+
+    public void setContas(List<Conta> contas) {
+        this.contas = contas;
+    }
+
+    public List<Card> getCards() {
+        return cards;
+    }
+
+    public void setCards(List<Card> cards) {
+        this.cards = cards;
     }
 
     
     
+    
+    @Override
+    public String toString() {
+        return "Cliente" + "nomeCompleto = " + nomeCompleto + ", NIF = " + NIF;
+    }
+
+    Object getContaList() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

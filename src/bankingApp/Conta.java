@@ -1,39 +1,122 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package bankingApp;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Maria
- */
 public class Conta {
 
-    //private int contador = 1;
     private int numeroConta;
-    // private String titular;
     private double saldo;
-    // private int qtdContas = 0;
-    // private ArrayList<Card> cardList;
+    private Card card;
+    public double depositar;
+    public double retirar;
+    public double transferir;
+    private Cliente titularPrincipal;
+    private ArrayList<Cliente> clienteLista;
+    private ArrayList<Card> cardLista;
+    private ArrayList<Conta> contaLista;
+    //private ArrayList<> cardLista;
 
-    /*new Conta*/
- /*public Conta(Cliente cliente){
-        this.numeroConta = contador;
-        this.cliente = cliente;
-        numeroDaConta += 1;
-        //this.saldo = saldo;
+    
+    public ArrayList<Card> getcardLista(){
+        return cardLista;
     }
-     */
+    
+    
+    public Conta(Cliente titularPrincipal, double saldo, Cliente cliente){
+        this.numeroConta = (int)(Math.random()+100);
+        this.titularPrincipal = titularPrincipal;
+        if(saldo < 100){
+            System.out.println("Deve dar entrada com pelo menos 100 euros");
+            return;
+        }else{this.saldo = saldo;
+            cliente.getContaList();
+        }
+    }
+            
+    void depositar(double valor) {
+        setSaldo(this.getSaldo() + valor);
+    }
+    void retirar(double valor, int numeroConta){
+        setSaldo(this.getSaldo() - valor);
+    }
+    void transferir(double valor, Conta enviar, Conta receber){
+        enviar.setSaldo(enviar.getSaldo() - valor);
+        receber.setSaldo(receber.getSaldo() + valor);
+    }
 
- /*
-    void associar(Card card){
-        this.card = Card;
+    public int getNumeroConta() {
+        return numeroConta;
     }
-     */
- /*
+
+    public void setNumeroConta(int numeroConta) {
+        this.numeroConta = numeroConta;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public Card getCard() {
+        return card;
+    }
+
+    public void setCard(Card card) {
+        this.card = card;
+    }
+
+    public double getDepositar() {
+        return depositar;
+    }
+
+    public void setDepositar(double depositar) {
+        this.depositar = depositar;
+    }
+
+    public double getRetirar() {
+        return retirar;
+    }
+
+    public void setRetirar(double retirar) {
+        this.retirar = retirar;
+    }
+
+    public double getTransferir() {
+        return transferir;
+    }
+
+    public void setTransferir(double transferir) {
+        this.transferir = transferir;
+    }
+
+    public Cliente getTitularPrincipal() {
+        return titularPrincipal;
+    }
+
+    public void setTitularPrincipal(Cliente titularPrincipal) {
+        this.titularPrincipal = titularPrincipal;
+    }
+
+    public ArrayList<Cliente> getClienteLista() {
+        return clienteLista;
+    }
+
+    public void setClienteLista(ArrayList<Cliente> clienteLista) {
+        this.clienteLista = clienteLista;
+    }
+
+    public ArrayList<Card> getCardLista() {
+        return cardLista;
+    }
+
+    public void setCardLista(ArrayList<Card> cardLista) {
+        this.cardLista = cardLista;
+    }
+    /*
     public void DadosBancarios(){
         System.out.println("-- Dados Bancarios --"); 
         System.out.println("- Numeros: " + this.numeroConta);
@@ -55,7 +138,7 @@ public class Conta {
         return "Conta{" + "numeroConta=" + numeroConta + ", saldo=" + saldo + '}';
     }
 
-    public void depositar(double pValor) {
+    /*public void depositar(double pValor) {
         this.saldo += pValor;
         System.out.println("- Saldo Atual" + this.saldo);
         System.out.println("Deposito efetuado");
@@ -69,6 +152,10 @@ public class Conta {
         } else {
             System.out.println("- Saldo insuficiente");
         }
-    }
+    }*/
+    
+    
+    
+    
 
 }
