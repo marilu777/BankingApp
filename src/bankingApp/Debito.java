@@ -1,13 +1,27 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package bankingApp;
 
-/**
- *
- * @author Maria
- */
-public class Debito {
+import Base.Base;
+
+
+public class Debito extends Card{
+    
+    private double movimentosDia;
+    private Base base;
+    
+    public Debito(double limiteDiario, Base base, Conta conta, Cliente cliente){
+        super();
+        this.movimentosDia = limiteDiario;
+        this.base = base;
+        //cliente.getCardList().include(this);
+    }
+
+    public double getMovimentosDia() {
+        return movimentosDia;
+    }
+
+    public void setMovimentosDia(double movimentosDia) {
+        this.movimentosDia = movimentosDia;
+    }
     
 }

@@ -34,13 +34,13 @@ public class Conta {
         }
     }
             
-    void depositar(double valor) {
+    public void depositar(double valor) {
         setSaldo(this.getSaldo() + valor);
     }
-    void retirar(double valor, int numeroConta){
+    public void retirar(double valor, int numeroConta){
         setSaldo(this.getSaldo() - valor);
     }
-    void transferir(double valor, Conta enviar, Conta receber){
+    public void transferir(double valor, Conta enviar, Conta receber){
         enviar.setSaldo(enviar.getSaldo() - valor);
         receber.setSaldo(receber.getSaldo() + valor);
     }
@@ -153,6 +153,10 @@ public class Conta {
             System.out.println("- Saldo insuficiente");
         }
     }*/
+
+    double getsaldo() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
     

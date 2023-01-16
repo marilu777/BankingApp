@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Base;
 import bankingApp.Card;
 import bankingApp.Cliente;
@@ -25,9 +22,13 @@ public class Base {
         operaçoes = new Base();
     }
     private String Conta;
-    private Base(){  
-    };
+
    
+    public Base(){
+        clientes = new ArrayList<>();
+        contas = new ArrayList<>();
+        cards = new ArrayList<>();
+    };
     
     // Resgistrar novos clientes
     public Cliente signinNovoCliente(String nomeCompleto, String profissao, String email, int NIF, int telefone, int pin){
@@ -36,7 +37,16 @@ public class Base {
         return novoCliente;
     }
     
-    //
+    //Fazer o login do cliente
+    public Cliente loginCliente(int NIF, int pin){
+        for(Cliente clientes : clientes){
+            if((clientes.getNIF()) == NIF && clientes.getPin() == pin){
+                System.out.println("Seja Bem vindo");
+                return clientes;
+            }
+        }
+        return null;
+    };
     
     
     // fazer depoisito de dinheiro
@@ -57,11 +67,31 @@ public class Base {
     public void transferir(Conta conta, double trans){
         conta.transferir = (trans);
     }
-    
-    /*
-    public Boolean loginAutenticaçao(String nif, int pin){
-        for(Cliente clientes : clientes)
+
+    public ArrayList<Cliente> getClientes() {
+        return clientes;
     }
-    */
+
+    public void setClientes(ArrayList<Cliente> clientes) {
+        this.clientes = clientes;
+    }
+
+    public ArrayList<Conta> getContas() {
+        return contas;
+    }
+
+    public void setContas(ArrayList<Conta> contas) {
+        this.contas = contas;
+    }
+
+    public ArrayList<Card> getCards() {
+        return cards;
+    }
+
+    public void setCards(ArrayList<Card> cards) {
+        this.cards = cards;
+    }
+    
+    
     
 }
