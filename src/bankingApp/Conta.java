@@ -12,9 +12,9 @@ public class Conta {
     public double retirar;
     public double transferir;
     private Cliente titularPrincipal;
-    private ArrayList<Cliente> clienteLista;
+    //private ArrayList<Cliente> clienteLista;
     private ArrayList<Card> cardLista;
-    private ArrayList<Conta> contaLista;
+    //private ArrayList<Conta> con7taLista;
     //private ArrayList<> cardLista;
 
     
@@ -28,21 +28,33 @@ public class Conta {
         this.titularPrincipal = titularPrincipal;
         if(saldo < 100){
             System.out.println("Deve dar entrada com pelo menos 100 euros");
-            return;
         }else{this.saldo = saldo;
             cliente.getContaList();
         }
     }
             
     public void depositar(double valor) {
-        setSaldo(this.getSaldo() + valor);
+        if(valor > 0){
+           setSaldo(this.getSaldo() + valor); 
+           System.out.println("Deposito feito com sucesso, o dinheiro atual é de" + saldo);
+        }
+        
     }
     public void retirar(double valor, int numeroConta){
-        setSaldo(this.getSaldo() - valor);
+        if(valor <= saldo){
+          setSaldo(this.getSaldo() - valor); 
+          System.out.println("Levantamento efetuado com sucesso, o dinheiro atual é de" + saldo);
+        }else{
+            System.out.println("Nao tem dinheiro suficiente para levantar");
+        }
+        
     }
     public void transferir(double valor, Conta enviar, Conta receber){
-        enviar.setSaldo(enviar.getSaldo() - valor);
-        receber.setSaldo(receber.getSaldo() + valor);
+        if(valor > 0 && valor <= saldo){
+          enviar.setSaldo(enviar.getSaldo() - valor);
+          receber.setSaldo(receber.getSaldo() + valor);  
+        }
+        
     }
 
     public int getNumeroConta() {
@@ -101,6 +113,7 @@ public class Conta {
         this.titularPrincipal = titularPrincipal;
     }
 
+    /*
     public ArrayList<Cliente> getClienteLista() {
         return clienteLista;
     }
@@ -108,6 +121,7 @@ public class Conta {
     public void setClienteLista(ArrayList<Cliente> clienteLista) {
         this.clienteLista = clienteLista;
     }
+    */
 
     public ArrayList<Card> getCardLista() {
         return cardLista;

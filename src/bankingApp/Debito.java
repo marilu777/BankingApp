@@ -1,4 +1,6 @@
 
+
+
 package bankingApp;
 
 import Base.Base;
@@ -7,12 +9,12 @@ import Base.Base;
 public class Debito extends Card{
     
     private double movimentosDia;
-    private Base base;
+    //private Base base;
     
     public Debito(double limiteDiario, Base base, Conta conta, Cliente cliente){
         super();
         this.movimentosDia = limiteDiario;
-        this.base = base;
+        //this.base = base;
         //cliente.getCardList().include(this);
     }
 
